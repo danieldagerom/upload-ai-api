@@ -1,9 +1,9 @@
-#@name get-prompts
+# @name get-prompts
 GET http://localhost:3333/prompts
 
 ###
 
-#@name upload
+# @name upload
 POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -16,3 +16,13 @@ Content-Type: audio/mpeg
 
 < ./example.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+POST http://localhost:3333/videos/73ccc02f-1587-4eaf-8bec-3919315bceeb/transcription
+Content-Type: application/json
+
+{
+    "prompt": "teste"
+}
